@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>background.jpg</title>
-<style>
-body {
-  background-image: url('background.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  margin: 0;
-}
-</style>
-</head>
-<body>
-</body>
+  <head>
+    <style>
+      body {
+        background-image: url('background.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        margin: 0;
+      }
+      body.keyboard-mode {
+        background-position: center calc(50% - 150px);
+      }
+      .keyboard-mode .placeholder {
+        display: block;
+      }
+      .placeholder {
+        background: beige;
+        bottom: 0;
+        display: none;
+        height: 300px;
+        left: 0;
+        position: fixed;
+        width: 100%;
+      }
+    </style>
+    <title>background</title>
+  </head>
+  <body>
+    <a href="javascript:void(0)" onclick="toggleMode()">Toggle</a>
+    <div class="placeholder"></div>
+    <script>
+      const toggleMode = () =>document.body.classList.toggle("keyboard-mode")
+    </script>
+  </body>
 </html>
